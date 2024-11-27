@@ -6,7 +6,7 @@ from wtforms import Form, StringField, PasswordField, validators
 
 # Initialize Flask app and extensions
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your_secret_key'  # Secure random secret key
+app.config['SECRET_KEY'] = 'your_secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
@@ -111,5 +111,5 @@ def logout():
 # Run the Flask app
 if __name__ == "__main__":
     with app.app_context():
-        db.create_all()  # Creates database tables if they don't exist
+        db.create_all()
     app.run(debug=True)
